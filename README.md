@@ -79,22 +79,15 @@ npm run preview
 
 ### Option A: Free Hosting on GitHub Pages
 
-1. In `vite.config.ts`, if your repository is at `https://<username>.github.io/<repo-name>/`, set the base path:
-   ```ts
-   export default defineConfig({
-     base: '/<repo-name>/', // e.g. '/hawkins-bullwhip-simulator/'
-     // ... rest of config
-   });
-   ```
-2. Build the project:
-   ```bash
-   npm run build
-   ```
-3. Deploy using `gh-pages` or GitHub Actions:
-   - Install gh-pages: `npm install -D gh-pages`
-   - Add script to `package.json`: `"deploy": "vite build && gh-pages -d dist"`
-   - Run: `npm run deploy`
-   - In your GitHub repository: go to **Settings > Pages** and set source to `gh-pages` branch.
+The repository includes a GitHub Actions workflow at `.github/workflows/deploy-pages.yml`.
+After pushing it to the `main` branch:
+
+1. Open **Settings > Pages** in the GitHub repository.
+2. Set **Build and deployment > Source** to **GitHub Actions**.
+3. Push to `main`, or run **Deploy to GitHub Pages** manually from the **Actions** tab.
+
+The published site will be available at:
+`https://vishnuadharsh-iim-k.github.io/Test-1-Bullwhip/`
 
 ### Option B: Free Hosting on Vercel or Netlify
 
